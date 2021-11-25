@@ -1,4 +1,6 @@
 # Caesar Cipher
+import art
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
@@ -24,6 +26,7 @@ def decrypt(message, spaces):
     print(f"The decoded text is: {output}")
 
 
+print(art.logo)
 direction = "start"
 
 while direction != "q":
@@ -37,5 +40,7 @@ while direction != "q":
         text = input("Type your encoded message:\n").lower()
         shift = int(input("Type the shift number:\n"))
         decrypt(text, shift)
+    elif direction == "q":
+        print("Goodbye!")
     else:
         print("Action undefined, please try again!")

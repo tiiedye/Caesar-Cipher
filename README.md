@@ -1,2 +1,2 @@
 # Caesar-Cipher
-A cipher ecoder/decoder made using Python
+A cipher encoder/decoder made using Python

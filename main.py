@@ -2,7 +2,7 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt, or 'Q' to quit:\n").lower()
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
@@ -28,5 +28,12 @@ def decrypt(message, spaces):
     print(f"The decoded text is: {output}")
 
 
-encrypt(text, shift)
-decrypt(text, shift)
+while direction != "q":
+    if direction == "encode":
+        encrypt(text, shift)
+        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt, or 'Q' to quit:\n").lower()
+    elif direction == "decode":
+        decrypt(text, shift)
+        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt, or 'Q' to quit:\n").lower()
+    else:
+        print("Action undefined, please try again!")
